@@ -1,0 +1,17 @@
+<div class="card mb-3 {{ this.pokemon.tipo }}">
+  <div class="pokemon-card__image">
+    <div class="fondo-pokemon-card">
+    </div>
+    <div class="pokemon-card__character">
+      <img
+        src="{{this.pokemon.imagen}}"
+        alt="Imagen de {{this.pokemon.nombre}}"
+        loading ="lazy"
+        imageMissing
+      />
+    </div>
+  </div>
+  <div class="card-body p-2">
+    <h5 class="card-title text-center">{{ this.pokemon.nombre }}</h5>
+  </div>
+</div>

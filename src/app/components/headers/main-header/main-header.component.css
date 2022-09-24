@@ -1,0 +1,9 @@
+.logos-header{
+    transform: translateY(-150%);
+}
+
+@media (min-width: 576px) {
+    .logos-header{
+        transform: translateY(-100%);
+    }
+}

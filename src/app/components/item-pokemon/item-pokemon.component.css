@@ -1,0 +1,59 @@
+.card{
+  border-radius: 12px;
+  background-color: #19072d;
+  color: #FFFFFF;
+}
+
+.fondo-pokemon-card::before {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-image: url(/assets/background-images/squarePattern30.svg),linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0) 38%);
+  background-size: 140px, auto;
+  background-position: center, left top;
+  border-radius: 12px;
+  content: "";
+}
+
+.fondo-pokemon-card{
+  position: absolute;
+  height: 100%;
+  width:100%;
+  border-radius: 12px;
+}
+
+.pokemon-card__image{
+  position:relative;
+  border-radius:inherit
+}
+
+.Ofensivo .fondo-pokemon-card{
+  background:#f16c38 linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0) 38%);
+}
+
+.Ágil .fondo-pokemon-card{
+  background:#29a5e3 linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0) 38%);
+}
+
+.Equilibrado .fondo-pokemon-card{
+  background:#ce5fd3 linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0) 38%);
+}
+
+.Defensivo .fondo-pokemon-card{
+  background: #aced5b linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0) 38%);
+}
+
+.Auxiliar .fondo-pokemon-card{
+  background:#fecc51 linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0) 38%);
+}
+
+.pokemon-card__character{
+  position: relative;
+}
+
+.pokemon-card__character img{
+  width: 100%;
+  border-radius: 12px;
+}

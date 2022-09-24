@@ -1,0 +1,71 @@
+/*#region listaPokemon*/
+#listaPokemonFiltro {
+  padding-top: 5%;
+}
+
+#listaPokemonContainer {
+  padding-top: 2%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+/*#endregion listaPokemon*/
+
+/*#region botonesFiltro*/
+.btn-filtro {
+  background: #351061;
+  font-size: 14px;
+  border: none;
+  border-radius: 2em;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.btn-filtro-pulsado {
+  background: #f9c921;
+  color: #220a3d;
+  box-shadow: none;
+}
+/*#endregion botonesFiltro*/
+
+/*#region itemPokemon*/
+.visible {
+  display: block;
+  animation: 1s ease-out 0s 1 aparecer;
+}
+
+item-pokemon {
+  transition: 0.4s ease-in-out;
+}
+
+item-pokemon:hover {
+  transform: scale3d(1.15, 1.15, 1.15);
+  z-index: 3000;
+  cursor: pointer;
+}
+/*#endregion itemPokemon*/
+
+li {
+  list-style: none;
+}
+
+/*#region mediaQueries*/
+@media (min-width: 1200px) {
+  #listaPokemonContainer {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+/*#endregion mediaQueries*/
+
+/*#region keyframes*/
+@keyframes aparecer {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*#endregion keyframes*/

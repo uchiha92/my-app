@@ -1,0 +1,39 @@
+<ul id="listaPokemonFiltro" class="row justify-content-center headingFont">
+  <li class="pr-2 pb-2">
+    <button
+      class="btn btn-filtro"
+      (click)="setTipoPulsado('')"
+      [ngClass]="this.tipoPulsado === '' ? 'btn-filtro-pulsado' : 'btn-filtro'"
+    >
+      Todos los roles
+    </button>
+  </li>
+  <li class="pr-2 pb-2" *ngFor="let tipo of this.tipos">
+    <button
+      class="btn btn-filtro"
+      (click)="setTipoPulsado(tipo.nombre)"
+      [ngClass]="
+        this.tipoPulsado === tipo.nombre ? 'btn-filtro-pulsado' : 'btn-filtro'
+      "
+    >
+      {{ tipo.nombre }}
+    </button>
+  </li>
+</ul>
+
+<div
+  id="listaPokemonContainer"
+  class="d-flex justify-content-between-around row"
+>
+  <item-pokemon
+    *ngFor="let pokemon of this.listaPokemon"
+    class="{{ pokemon.tipo }}"
+    [pokemon]="pokemon"
+    [ngClass]="
+      this.tipoPulsado != pokemon.tipo && this.tipoPulsado != ''
+        ? 'd-none'
+        : 'visible col-6 col-sm-4 col-lg-3'
+    "
+  >
+  </item-pokemon>
+</div>
