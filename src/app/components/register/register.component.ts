@@ -63,7 +63,7 @@ export class RegisterComponent implements OnInit {
         case "auth/weak-password":
           return this.formRegister.get('password')?.setErrors({ minlength: true, errorMessage: 'La contraseña debe tener al menos 6 caracteres.' });
         default:
-          alert("Ocurrió un error inesperado");
+          alert("Lo sentimos. Ocurrió un error inesperado.");
           break;
       }
     });
