@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MenuComponent } from './components/menu/menu.component';
 import { ListaPokemonComponent } from './components/lista-pokemon/lista-pokemon.component';
@@ -18,6 +19,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { FormularioAddPokemonComponent } from './components/formulario-add-pokemon/formulario-add-pokemon.component';
 import { ImageMissingDirective } from './directives/image-missing/image-missing.directive';
 import { MainHeaderComponent } from './components/headers/main-header/main-header.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,13 @@ import { MainHeaderComponent } from './components/headers/main-header/main-heade
     FormularioAddPokemonComponent,
     ImageMissingDirective,
     MainHeaderComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
