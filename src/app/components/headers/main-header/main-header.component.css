@@ -1,9 +1,10 @@
 .logos-header{
     transform: translateY(-150%);
+    position: absolute;
 }
 
-@media (min-width: 576px) {
-    .logos-header{
-        transform: translateY(-100%);
-    }
+.logo-unite-header{
+    transform: translateY(-280%);
+    position: absolute;
 }
+
