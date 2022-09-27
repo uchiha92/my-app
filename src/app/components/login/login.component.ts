@@ -8,73 +8,73 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
-import { Validation } from 'src/app/utils/validation';
 
 @Component({
-  selector: 'register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
+  selector: 'login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
 })
-export class RegisterComponent implements OnInit {
-  formRegister: FormGroup;
+export class LoginComponent implements OnInit {
+  formLogin: FormGroup;
   submitted: boolean;
 
   constructor(
     private userService: UserService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
   ) {
-    this.formRegister = new FormGroup({
+    this.formLogin = new FormGroup({
       email: new FormControl(),
       password: new FormControl(),
-      confirmPassword: new FormControl(),
     });
     this.submitted = false;
   }
 
   ngOnInit(): void {
-    this.formRegister = this.formBuilder.group(
+    this.formLogin = this.formBuilder.group(
       {
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
-        confirmPassword: ['', Validators.required],
-      },
-      { validators: [Validation.match('password', 'confirmPassword')] }
+      }
     );
   }
 
   get f(): { [key: string]: AbstractControl } {
-    return this.formRegister.controls;
+    return this.formLogin.controls;
+  }
+
+  loginWithGoogle(){
+    this.userService.loginWithGoogle();
   }
 
   onSubmit(): void {
     this.submitted = true;
 
-    if (this.formRegister.invalid) {
+    if (this.formLogin.invalid) {
       return;
     }
 
-    const email = this.formRegister.get(['email'])?.value;
-    const password = this.formRegister.get(['password'])?.value;
+    const email = this.formLogin.get(['email'])?.value;
+    const password = this.formLogin.get(['password'])?.value;
 
     const validatedValues = { email, password };
 
     this.userService
-      .register(validatedValues)
+      .login(validatedValues)
       .then((response) => {
-        this.router.navigate(['/'])
+        this.router.navigate(['/']);
       })
       .catch((error) => {
         switch (error.code) {
           case 'auth/email-already-in-use':
-            return this.formRegister
+            return this.formLogin
               .get('email')
               ?.setErrors({
                 usedEmail: true,
                 errorMessage: 'El email introducido ya existe.',
               });
           case 'auth/weak-password':
-            return this.formRegister
+            return this.formLogin
               .get('password')
               ?.setErrors({
                 minlength: true,

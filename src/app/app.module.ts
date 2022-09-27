@@ -20,7 +20,7 @@ import { FormularioAddPokemonComponent } from './components/formulario-add-pokem
 import { ImageMissingDirective } from './directives/image-missing/image-missing.directive';
 import { MainHeaderComponent } from './components/headers/main-header/main-header.component';
 import { RegisterComponent } from './components/register/register.component';
-
+import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +31,7 @@ import { RegisterComponent } from './components/register/register.component';
     ImageMissingDirective,
     MainHeaderComponent,
     RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
